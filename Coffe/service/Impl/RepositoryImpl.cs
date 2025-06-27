@@ -11,22 +11,28 @@ namespace Coffe.service.Impl
         private readonly List<T> Items = new();
         public void Add(T entity)
         {
-            
+            Items.Add(entity);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            var item = GetById(id);
+            if (item != null) Items.Remove(item);
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return Items;
         }
 
         public T? GetById(int id)
         {
-            throw new NotImplementedException();
+            return Items.FirstOrDefault(item => GetId(item).Equals(id));
+        }
+        private int GetId(T item)
+        {
+            var prop = typeof(T).GetProperty("Id");
+            return prop != null ? (int)(prop.GetValue(item) ?? 0) : 0;
         }
     }
 }
