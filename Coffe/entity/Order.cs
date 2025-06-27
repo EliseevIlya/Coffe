@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Coffe.entity
 {
-    internal class Order
+    internal class Order : IEntity
     {
         public int Id { get; set; }
         public string CustomerName { get; set; } = "";
