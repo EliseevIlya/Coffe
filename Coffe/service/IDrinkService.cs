@@ -10,10 +10,10 @@ namespace Coffe.service
     internal interface IDrinkService
     {
         void AddDrink(Drink drink);
-        void UpdateDrink(Drink drink);
+        void UpdateDrink(Drink updatedDrink);
         void DeleteDrink(Drink drink);
         List<Drink> GetAllDrinks();
-        Drink GetDrink(int id);
+        Drink? GetDrinkById(int id);
 
     }
 }

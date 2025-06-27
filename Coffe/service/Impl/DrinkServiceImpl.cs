@@ -18,27 +18,35 @@ namespace Coffe.service.Impl
 
         public void AddDrink(Drink drink)
         {
-            throw new NotImplementedException();
+            _repository.Add(drink);
         }
 
         public void DeleteDrink(Drink drink)
         {
-            throw new NotImplementedException();
+            _repository.DeleteById(drink.Id);
         }
 
         public List<Drink> GetAllDrinks()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll();
         }
 
-        public Drink GetDrink(int id)
+        public Drink? GetDrinkById(int id)
         {
-            throw new NotImplementedException();
+            return _repository.GetById(id);
         }
 
-        public void UpdateDrink(Drink drink)
+        public void UpdateDrink(Drink updatedDrink)
         {
-            throw new NotImplementedException();
+            var existingDrink = _repository.GetById(updatedDrink.Id);
+            if (existingDrink == null)
+            {
+                Console.WriteLine("Drink not found");
+                return;
+            }
+            existingDrink.Name = updatedDrink.Name;
+            existingDrink.Price = updatedDrink.Price;
+
         }
     }
 }
