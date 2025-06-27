@@ -11,7 +11,7 @@ namespace Coffe.service
     {
         void AddDrink(Drink drink);
         void UpdateDrink(Drink updatedDrink);
-        void DeleteDrink(Drink drink);
+        void DeleteDrink(int id);
         List<Drink> GetAllDrinks();
         Drink? GetDrinkById(int id);
 
