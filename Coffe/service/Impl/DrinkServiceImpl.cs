@@ -21,9 +21,9 @@ namespace Coffe.service.Impl
             _repository.Add(drink);
         }
 
-        public void DeleteDrink(Drink drink)
+        public void DeleteDrink(int id)
         {
-            _repository.DeleteById(drink.Id);
+            _repository.DeleteById(id);
         }
 
         public List<Drink> GetAllDrinks()
