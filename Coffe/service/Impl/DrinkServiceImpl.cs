@@ -1,4 +1,5 @@
-﻿using Coffe.entity;
+﻿using Coffe.dto;
+using Coffe.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,11 @@ namespace Coffe.service.Impl
             _repository = repository;
         }
 
-        public void AddDrink(Drink drink)
+        public void AddDrink(DrinkCreateDTO createDTO)
         {
+            var drink = new Drink();
+            drink.Name = createDTO.Name;
+            drink.Price = createDTO.Price;
             _repository.Add(drink);
         }
 

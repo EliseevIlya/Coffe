@@ -1,4 +1,5 @@
-﻿using Coffe.entity;
+﻿using Coffe.dto;
+using Coffe.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Coffe.service
 {
     internal interface IDrinkService
     {
-        void AddDrink(Drink drink);
+        void AddDrink(DrinkCreateDTO createDTO);
         void UpdateDrink(Drink updatedDrink);
         void DeleteDrink(int id);
         List<Drink> GetAllDrinks();
