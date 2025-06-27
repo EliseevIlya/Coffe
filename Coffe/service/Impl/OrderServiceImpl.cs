@@ -11,7 +11,7 @@ namespace Coffe.service.Impl
     internal class OrderServiceImpl : IOrderService
     {
         private readonly IRepository<Order> _repository;
-        private readonly DiscountServiceImpl _discountService;
+        private readonly IDiscountService _discountService;
 
         public OrderServiceImpl(IRepository<Order> repository, DiscountServiceImpl discountService)
         {
